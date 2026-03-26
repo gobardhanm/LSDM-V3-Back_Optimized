@@ -1,0 +1,33 @@
+# Compiled files
+*.o
+*.out
+*.exe
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# CUDA
+*.ptx
+*.cubin
+
+# OS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Large data / results (adjust if needed)
+data/
+results/
+datasets/
