@@ -5,15 +5,15 @@
 # OR: Edit DATASET_PATH and OUTPUT_DIR below and run: sbatch run_bc_tsv_template.sbatch
 ##############################################################################
 
-#SBATCH --job-name=bc_tsv
+#SBATCH --job-name=roadNet-CA
 #SBATCH --partition=gpu
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
-#SBATCH --time=06:00:00
+#SBATCH --time=12:00:00
 
 # ========== USER CONFIGURATION (Edit these) ==========
-DATASET_PATH="${DATASET_PATH:-/data/Dataset/GraphChallange/ogbn-arxiv.tsv}"     # ← CHANGE THIS
+DATASET_PATH="${DATASET_PATH:-/data/Dataset/gobardhan-datasets/roadNet-CA_adj.tsv}"     # ← CHANGE THIS
 OUTPUT_DIR="${OUTPUT_DIR:-results/}"                              # ← CHANGE THIS
 BATCH_SIZE="${BATCH_SIZE:-32}"                                          # ← OPTIONAL: Batch size
 
@@ -21,7 +21,7 @@ BATCH_SIZE="${BATCH_SIZE:-32}"                                          # ← OP
 
 set -euo pipefail
 
-PROJECT_DIR="/data/gobardhan/LSDM-v3-bck-opt"
+PROJECT_DIR="/data/gobardhan/LSDM-V3-Back_Optimized"
 cd "${PROJECT_DIR}"
 
 # Create output directory
@@ -30,7 +30,7 @@ mkdir -p "${OUTPUT_DIR}"
 # Load required modules
 module load gcc-12.3.0 cuda-12.3 2>/dev/null || true
 
-OUTPUT_FILE="${OUTPUT_DIR}/bc_$(basename ${DATASET_PATH} .tsv)_${SLURM_JOB_ID}.txt"
+OUTPUT_FILE="${OUTPUT_DIR}/$(basename "${DATASET_PATH}" .tsv)_BC.txt"
 
 echo "======================================================================"
 echo "BC Computation - TSV Dataset"

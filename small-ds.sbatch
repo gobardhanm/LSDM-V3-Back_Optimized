@@ -13,15 +13,15 @@
 #SBATCH --time=06:00:00
 
 # ========== USER CONFIGURATION (Edit these) ==========
-DATASET_PATH="${DATASET_PATH:-/data/Dataset/GraphChallange/oregon2_010331_adj.tsv}"     # ← CHANGE THIS
-OUTPUT_DIR="${OUTPUT_DIR:-results/small-ds-v2/}"                              # ← CHANGE THIS
+DATASET_PATH="${DATASET_PATH:-/data/Dataset/gobardhan-datasets/smallDatasets/soc-Slashdot0902_adj.tsv}"     # ← CHANGE THIS
+OUTPUT_DIR="${OUTPUT_DIR:-results/small/}"                              # ← CHANGE THIS
 BATCH_SIZE="${BATCH_SIZE:-32}"                                          # ← OPTIONAL: Batch size
 
 # ====================================================
 
 set -euo pipefail
 
-PROJECT_DIR="/data/gobardhan/LSDM-v3-bck-opt"
+PROJECT_DIR="/data/gobardhan/LSDM-V3-Back_Optimized"
 cd "${PROJECT_DIR}"
 
 # Create output directory
@@ -30,7 +30,7 @@ mkdir -p "${OUTPUT_DIR}"
 # Load required modules
 module load gcc-12.3.0 cuda-12.3 2>/dev/null || true
 
-OUTPUT_FILE="${OUTPUT_DIR}/oregon2_010331_BC.txt"
+OUTPUT_FILE="${OUTPUT_DIR}/soc-Slashdot0902_BC.txt"
 
 echo "======================================================================"
 echo "BC Computation - TSV Dataset"

@@ -1,0 +1,32 @@
+======================================================================
+BC COMPARISON SUMMARY
+Date: Thu Mar 26 03:51:06 PM IST 2026
+======================================================================
+
+[ca-CondMat]  ❌ RESULT: 46 MISMATCHES found!
+  Max absolute difference:  63.423000  (node 16610)
+  Max relative difference:  0.00028368  (node 6154)
+
+[email-Enron]  ❌ RESULT: 194 MISMATCHES found!
+  Max absolute difference:  1539.167000  (node 31182)
+  Max relative difference:  0.00055368  (node 5467)
+
+[oregon1_010331]  ❌ RESULT: 2 MISMATCHES found!
+  Max absolute difference:  184.641000  (node 8601)
+  Max relative difference:  0.00018372  (node 4654)
+
+[oregon2_010331]  ❌ RESULT: 3 MISMATCHES found!
+  Max absolute difference:  179.516000  (node 7266)
+  Max relative difference:  0.00013574  (node 4985)
+
+[p2p-Gnutella25]  ✅ RESULT: ALL VALUES MATCH within tolerance!
+  Max absolute difference:  8.786000  (node 14527)
+  Max relative difference:  0.00002405  (node 11336)
+
+[soc-Slashdot0902]  ❌ RESULT: 42 MISMATCHES found!
+  Max absolute difference:  1364.394000  (node 16603)
+  Max relative difference:  0.00104787  (node 69406)
+
+
+Reports saved in: comparison/
+======================================================================

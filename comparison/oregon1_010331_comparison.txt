@@ -1,0 +1,28 @@
+======================================================================
+BETWEENNESS CENTRALITY COMPARISON REPORT
+======================================================================
+File A: results/small/oregon1_010331_BC.txt  (10670 nodes)
+File B: /data/gobardhan/cuGraph/results/BC_oregon1_010331.txt  (10670 nodes)
+Absolute Tolerance: 0.001
+Relative Tolerance: 0.0001
+
+--- SUMMARY ---
+Total unique nodes:       10670
+Common nodes:             10670
+Only in File A:           0
+Only in File B:           0
+Exact matches:            8358 / 10670  (78.33%)
+Within tolerance:         10668 / 10670  (99.98%)
+Mismatches (out of tol):  2 / 10670  (0.02%)
+Max absolute difference:  184.641000  (node 8601)
+Max relative difference:  0.00018372  (node 4654)
+
+❌ RESULT: 2 MISMATCHES found!
+
+--- TOP MISMATCHES (sorted by abs diff, max 20) ---
+    Node            File A            File B        Abs Diff      Rel Diff
+----------------------------------------------------------------------
+    4892          3503.007          3503.531        0.524000    0.00014956
+    6029          3503.007          3503.531        0.524000    0.00014956
+
+======================================================================

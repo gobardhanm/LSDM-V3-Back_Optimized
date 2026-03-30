@@ -5,15 +5,16 @@
 # OR: Edit MTX_PATH and OUTPUT_DIR below and run: sbatch run_bc_mtx_template.sbatch
 ##############################################################################
 
-#SBATCH --job-name=bc_mtx
+#SBATCH --job-name=road_usa
 #SBATCH --partition=gpu
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
-#SBATCH --time=06:00:00
+#SBATCH --nodelist=gpu1
+#SBATCH --time=12:00:00
 
 # ========== USER CONFIGURATION (Edit these) ==========
-MTX_PATH="${MTX_PATH:-/data/Dataset/SuiteSparse/soc-LiveJournal1/soc-LiveJournal1.mtx}"                         # ← CHANGE THIS
+MTX_PATH="${MTX_PATH:-/data/Dataset/gobardhan-datasets/mtx/road_usa.mtx}"                         # ← CHANGE THIS
 OUTPUT_DIR="${OUTPUT_DIR:-results/bc_mtx}"                              # ← CHANGE THIS
 BATCH_SIZE="${BATCH_SIZE:-32}"                                          # ← OPTIONAL: Batch size
 TEMP_DIR="${TEMP_DIR:-/tmp}"                                            # ← Temp directory for TSV conversion
@@ -22,7 +23,7 @@ TEMP_DIR="${TEMP_DIR:-/tmp}"                                            # ← Te
 
 set -euo pipefail
 
-PROJECT_DIR="/data/gobardhan/LSDM-v3-bck-opt"
+PROJECT_DIR="/data/gobardhan/LSDM-V3-Back_Optimized"
 cd "${PROJECT_DIR}"
 
 # Create output directory
@@ -33,7 +34,7 @@ module load gcc-12.3.0 cuda-12.3 python3 2>/dev/null || true
 
 DATASET_NAME=$(basename "${MTX_PATH}" .mtx)
 TSV_FILE="${TEMP_DIR}/${DATASET_NAME}_${SLURM_JOB_ID}.tsv"
-OUTPUT_FILE="${OUTPUT_DIR}/bc_${DATASET_NAME}_${SLURM_JOB_ID}.txt"
+OUTPUT_FILE="${OUTPUT_DIR}/${DATASET_NAME}_BC.txt"
 
 echo "======================================================================"
 echo "BC Computation - MTX Dataset (Auto-converted to TSV)"

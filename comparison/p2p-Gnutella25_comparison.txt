@@ -1,0 +1,22 @@
+======================================================================
+BETWEENNESS CENTRALITY COMPARISON REPORT
+======================================================================
+File A: results/small/p2p-Gnutella25_BC.txt  (22687 nodes)
+File B: /data/gobardhan/cuGraph/results/BC_p2p-Gnutella25.txt  (22687 nodes)
+Absolute Tolerance: 0.001
+Relative Tolerance: 0.0001
+
+--- SUMMARY ---
+Total unique nodes:       22687
+Common nodes:             22687
+Only in File A:           0
+Only in File B:           0
+Exact matches:            9705 / 22687  (42.78%)
+Within tolerance:         22687 / 22687  (100.00%)
+Mismatches (out of tol):  0 / 22687  (0.00%)
+Max absolute difference:  8.786000  (node 14527)
+Max relative difference:  0.00002405  (node 11336)
+
+✅ RESULT: ALL VALUES MATCH within tolerance!
+
+======================================================================
